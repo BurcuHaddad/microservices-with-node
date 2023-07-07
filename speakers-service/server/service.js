@@ -15,6 +15,7 @@ module.exports = (config) => {
       return next();
     });
   }
+  service.use("/images/", express.static(config.data.images));
 
   service.get("/list", async (req, res, next) => {
     try {
